@@ -8,7 +8,6 @@ function JournalEntry(props) {
     }
 
     const entry = <p>{props.text}</p>
-
     const date = new Date(props.time)
     const formattedDate = date.toLocaleString("en-GB",
         {
@@ -22,7 +21,8 @@ function JournalEntry(props) {
 
     return (
         <section>
-            <h2 onClick={()=>clickVisible()}>{props.title}</h2>
+            <h2 onClick={() => clickVisible()}>{props.title}</h2>
+            <button onClick={() => props.handleDelete(props.time)}>Delete</button>
             {isVisible ? formattedDate : null}
             { isVisible ? entry : null }
         </section>
