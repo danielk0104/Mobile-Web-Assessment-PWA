@@ -1,7 +1,7 @@
-function Header() {
+function Header(props) {
   return (
     <header>
-        <h1>Journal</h1>
+        <h1>{props.title}</h1>
       </header>
   )
 }

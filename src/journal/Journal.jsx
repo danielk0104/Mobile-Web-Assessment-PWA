@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Header from "../components/Header"
 import JournalEntry from "./JournalEntry"
 import JournalForm from "./JournalForm"
 
@@ -36,6 +37,7 @@ function Journal() {
 
   return (
     <div>
+      <Header title="Journal" />
       <JournalForm handleSubmit={addEntry} />
       {journalJSX}
     </div>
