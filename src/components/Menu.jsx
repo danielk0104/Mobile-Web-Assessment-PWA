@@ -19,6 +19,11 @@ function Menu() {
                         <div>To-Do</div>
                     </Link>
                 </li>
+                <li>
+                    <Link to="/timer">
+                        <div>Timer</div>
+                    </Link>
+                </li>
             </ul>
         </nav>
     )
