@@ -37,7 +37,7 @@ function Todo() {
 
     return (
         <div>
-            <Header title="To Do List" />
+            <Header title="To-Do List" />
             <TodoForm handleSubmit={addTodo} />
             <TodoList todos={todos} handleToggle={toggleTodo} handleDelete={deleteTodo}/>
         </div>

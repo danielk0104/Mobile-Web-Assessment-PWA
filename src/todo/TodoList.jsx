@@ -3,7 +3,7 @@ import TodoItem from "./TodoItem"
 
 function TodoList(props) {
     if (props.todos.length === 0) {
-        return <p>No to dos yet. Add one!</p>
+        return <p>No items yet. Add one!</p>
     }
 
     const todos = props.todos.map(
