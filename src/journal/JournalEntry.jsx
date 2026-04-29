@@ -19,6 +19,11 @@ function JournalEntry(props) {
         }
     )
 
+    // If an entry (both title & text) does not include the search term, return null to exclude from the list
+    if (props.search && !props.title.toLowerCase().includes(props.search.toLowerCase()) && !props.text.toLowerCase().includes(props.search.toLowerCase())) {
+        return null;
+    }
+
     return (
         <section>
             <h2 onClick={() => clickVisible()}>{props.title}</h2>

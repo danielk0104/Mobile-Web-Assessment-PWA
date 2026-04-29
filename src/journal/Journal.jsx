@@ -6,9 +6,12 @@ import JournalForm from "./JournalForm"
 function Journal() {
   const [journal, setJournal] = useState([])
 
+  // State for seach term entered by user
+  const [search, setSearch] = useState("")
+
   const journalJSX = journal.map((item, index) => {
     return (
-      <JournalEntry key={index} title={item.title} time={item.time} text={item.text} handleDelete={deleteEntry} />
+      <JournalEntry key={index} title={item.title} time={item.time} text={item.text} handleDelete={deleteEntry} search={search} />
     )
   })
 
@@ -33,6 +36,12 @@ function Journal() {
   return (
     <div>
       <Header title="Journal" />
+      <input
+        type="text"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        placeholder="Search entries..."
+      />
       <JournalForm handleSubmit={addEntry} />
       {journalJSX}
     </div>

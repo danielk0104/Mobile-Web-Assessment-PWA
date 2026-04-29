@@ -6,6 +6,8 @@ import TodoForm from "./TodoForm"
 function Todo() {
     const [todos, setTodos] = useState([])
 
+    const [selected, setSelected] = useState("all")
+
     // Create a new todo
     function addTodo(text) {
         setTodos(
@@ -35,11 +37,25 @@ function Todo() {
         )
     }
 
+    // Filtering to do items
+    function handleSelected(e) {
+        setSelected(e.target.value)
+    }
+
     return (
         <div>
             <Header title="To-Do List" />
             <TodoForm handleSubmit={addTodo} />
-            <TodoList todos={todos} handleToggle={toggleTodo} handleDelete={deleteTodo}/>
+            <select onChange={handleSelected} value={selected}>
+                <option value="all">All</option>
+                <option value="active">Active</option>
+                <option value="completed">Completed</option>
+            </select>
+            <TodoList
+                todos={todos}
+                handleToggle={toggleTodo}
+                handleDelete={deleteTodo}
+                selected={selected} />
         </div>
     )
 }

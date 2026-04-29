@@ -8,6 +8,14 @@ function TodoList(props) {
 
     const todos = props.todos.map(
         function (todo) {
+            if (props.selected === "active" && todo.completed) {
+                return null
+            }
+
+            if (props.selected === "completed" && !todo.completed) {
+                return null
+            }
+
             return (
                 <TodoItem 
                     key={todo.time}
