@@ -10,13 +10,13 @@ function Menu() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/journal">
-                        <div>Journal</div>
+                    <Link to="/to-do">
+                        <div>To-Do List</div>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/to-do">
-                        <div>To-Do</div>
+                    <Link to="/journal">
+                        <div>Journal</div>
                     </Link>
                 </li>
                 <li>
