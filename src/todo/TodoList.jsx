@@ -1,4 +1,3 @@
-import Todo from "./Todo"
 import TodoItem from "./TodoItem"
 
 function TodoList(props) {

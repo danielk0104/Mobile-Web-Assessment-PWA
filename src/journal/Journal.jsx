@@ -4,7 +4,14 @@ import JournalEntry from "./JournalEntry"
 import JournalForm from "./JournalForm"
 
 function Journal() {
-  const [journal, setJournal] = useState([])
+  const [journal, setJournal] = useState(function() {
+    const stored = localStorage.getItem('journal')
+    if (stored) {
+      return JSON.parse(stored)
+    } else {
+      return []
+    }
+  })
 
   // State for seach term entered by user
   const [search, setSearch] = useState("")
@@ -17,20 +24,20 @@ function Journal() {
 
   // Create a new journal entry
   function addEntry(title, text) {
-    setJournal(
-      [...journal, {title: title, time: Date.now(), text: text}]
-    )
+    const updatedEntry = [...journal, {title: title, time: Date.now(), text: text}]
+    setJournal(updatedEntry)
+    localStorage.setItem("journal", JSON.stringify(updatedEntry))
   }
 
   // Delete an entry
   function deleteEntry(time) {
-    setJournal(
-      journal.filter(
-        function(entry) {
-          return entry.time !== time
-        }
-      )
+    const updatedEntry = todos.filter(
+      function (entry) {
+      return entry.time !== time
+      }
     )
+    setJournal(updatedEntry)
+    localStorage.setItem("journal", JSON.stringify(updatedEntry))
   }
 
   return (

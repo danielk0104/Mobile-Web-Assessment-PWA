@@ -4,37 +4,44 @@ import TodoList from "./TodoList"
 import TodoForm from "./TodoForm"
 
 function Todo() {
-    const [todos, setTodos] = useState([])
+    const [todos, setTodos] = useState(function() {
+        const stored = localStorage.getItem('todos')
+        if (stored) {
+            return JSON.parse(stored)
+        } else {
+            return []
+        }
+    })
 
     const [selected, setSelected] = useState("all")
 
     // Create a new todo
     function addTodo(text) {
-        setTodos(
-            [...todos, {time: Date.now(), text: text, completed: false}]
-        )
+        const updatedTodos = [...todos, { time: Date.now(), text: text, completed: false }]
+        setTodos(updatedTodos)
+        localStorage.setItem("todos", JSON.stringify(updatedTodos))
     }
 
     // Toggle the status of a todo
     function toggleTodo(time) {
-        setTodos(
-            todos.map(
-                function (todo) {
-                    return todo.time === time ? { ...todo, completed: !todo.completed } : todo
-                }
-            )
+        const updatedTodos = todos.map(
+            function (todo) {
+                return todo.time === time ? { ...todo, completed: !todo.completed } : todo
+            }
         )
+        setTodos(updatedTodos)
+        localStorage.setItem("todos", JSON.stringify(updatedTodos))
     }
 
     // Delete a todo
     function deleteTodo(time) {
-        setTodos(
-            todos.filter(
-                function (todo) {
-                    return todo.time !== time
-                }
-            )
+        const updatedTodos = todos.filter(
+            function (todo) {
+            return todo.time !== time
+        }
         )
+        setTodos(updatedTodos)
+        localStorage.setItem("todos", JSON.stringify(updatedTodos))
     }
 
     // Filtering to do items
