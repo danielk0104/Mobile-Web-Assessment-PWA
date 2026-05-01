@@ -28,8 +28,8 @@ function Messages() {
     }, [location.pathname])
 
     return (
-        <div>
-            <p>{display}</p>
+        <div className="mt-5">
+            <p className="text-sm font-display italic text-center">{display}</p>
         </div>
     )
 }

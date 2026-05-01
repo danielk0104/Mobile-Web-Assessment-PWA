@@ -1,7 +1,7 @@
 function Header(props) {
   return (
-    <header>
-        <h1>{props.title}</h1>
+    <header className="mb-10">
+        <h1 className="text-6xl text-center font-display font-extrabold">{props.title}</h1>
       </header>
   )
 }

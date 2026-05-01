@@ -50,7 +50,7 @@ function Todo() {
     }
 
     return (
-        <div>
+        <div className="container mx-auto p-4">
             <Header title="To-Do List" />
             <TodoForm handleSubmit={addTodo} />
             <select onChange={handleSelected} value={selected}>

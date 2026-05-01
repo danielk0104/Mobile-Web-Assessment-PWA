@@ -1,4 +1,3 @@
-import "./App.css"
 import { Routes, Route } from "react-router-dom"
 import { useState } from "react"
 import Menu from "./components/Menu"
@@ -10,7 +9,7 @@ import Timer from "./timer/Timer"
 
 function App() {
   return (
-    <div>
+    <div className="bg-white min-h-screen shadow-2xl">
       <Menu />
       <Messages />
       <Routes>

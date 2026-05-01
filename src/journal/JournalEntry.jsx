@@ -3,11 +3,12 @@ import { useState } from "react"
 function JournalEntry(props) {
     const [isVisible, setVisible] = useState(false);
 
+    // Make an entry visible when it's clicked on
     function clickVisible() {
         setVisible(!isVisible)
     }
 
-    const entry = <p>{props.text}</p>
+    const entry = <p className="mb-5 font-display">{props.text}</p>
     const date = new Date(props.time)
     const formattedDate = date.toLocaleString("en-GB",
         {
@@ -24,12 +25,24 @@ function JournalEntry(props) {
         return null;
     }
 
-    return (
-        <section>
-            <h2 onClick={() => clickVisible()}>{props.title}</h2>
-            <button onClick={() => props.handleDelete(props.time)}>Delete</button>
-            {isVisible ? formattedDate : null}
+    const heading = (
+        <div className="flex outline outline-blue-900">
+            <h2 className="p-2 bg-blue-900 text-white font-display font-bold text-xl cursor-pointer" onClick={() => clickVisible()}>{props.title}</h2>
+            <p className="p-2 ml-1 font-display italic font-bold">{formattedDate}</p>
+        </div>
+    )
+
+    const body = (
+        <div className="p-3">
             { isVisible ? entry : null }
+            <button className="p-2 outline outline-red-500 font-display font-bold cursor-pointer hover:bg-red-500 hover:text-white duration-200" onClick={() => props.handleDelete(props.time)}>Delete Entry</button>
+        </div>
+    )
+
+    return (
+        <section className="mb-5 mt-5 outline">
+            {heading}
+            {body}
         </section>
     )
 }

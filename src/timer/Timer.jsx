@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import Header from "../components/Header"
 
 function Timer() {
     const [seconds, setSeconds] = useState(10)
@@ -57,7 +58,8 @@ function Timer() {
     const [time, setTime] = useState()
 
     return (
-        <div>
+        <div className="container mx-auto p-4">
+            <Header title="Timer" />
             <select value={seconds} onChange={handleSelect} disabled={started}>
                 <option value="10">10 seconds</option>
                 <option value="30">30 seconds</option>

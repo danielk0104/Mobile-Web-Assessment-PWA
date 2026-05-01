@@ -41,15 +41,17 @@ function Journal() {
   }
 
   return (
-    <div>
+    <div className="container mx-auto p-5">
       <Header title="Journal" />
       <input
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Search entries..."
+        className="p-2 outline w-full font-display"
       />
       <JournalForm handleSubmit={addEntry} />
+      <p className="mb-3 text-lg font-display">Past entries...</p>
       {journalJSX}
     </div>
   )
