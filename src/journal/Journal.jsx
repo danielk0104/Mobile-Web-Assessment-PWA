@@ -51,7 +51,7 @@ function Journal() {
         className="p-2 outline w-full font-display"
       />
       <JournalForm handleSubmit={addEntry} />
-      <p className="mb-3 text-lg font-display">Past entries...</p>
+      <p className="mb-3 text-xl font-display">Past entries...</p>
       {journalJSX}
     </div>
   )

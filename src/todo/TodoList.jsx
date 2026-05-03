@@ -27,7 +27,7 @@ function TodoList(props) {
     )
 
     return (
-        <ul>
+        <ul className="mt-5">
             {todos}
         </ul>
     )

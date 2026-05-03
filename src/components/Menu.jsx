@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 function Menu() {
     return (
-        <div className="container mx-auto p-3">
+        <div className="fixed top-0 w-lg p-3">
             <nav className="flex outline outline-blue-900 bg-white text-blue-900">
                 <ul className="flex w-full">
                     <li className="h-full w-full outline">
