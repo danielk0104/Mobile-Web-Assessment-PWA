@@ -60,7 +60,7 @@ function Timer() {
     return (
         <div className="container mx-auto p-4">
             <Header title="Timer" />
-            <select value={seconds} onChange={handleSelect} disabled={started}>
+            <select className="mb-10 mt-3 p-2 w-full outline outline-blue-900 hover:bg-blue-900 hover:text-white duration-200 font-display font-bold cursor-pointer" value={seconds} onChange={handleSelect} disabled={started}>
                 <option value="10">10 seconds</option>
                 <option value="30">30 seconds</option>
                 <option value="60">1 minute</option>
@@ -70,13 +70,13 @@ function Timer() {
                 <option value="1800">30 minutes</option>
                 <option value="3600">1 hour</option>
             </select>
-            <p>{hrs}:{mins}:{secs}</p>
-            {seconds === 0 ? <p>Time's up!</p> : null}
-            <div>
-                <button onClick={handleStartPause}>
+            <p className="m-5 text-center text-8xl font-display font-light">{hrs}:{mins}:{secs}</p>
+            {seconds === 0 ? <p className="text-red-500 text-center font-display font-bold text-4xl">Time's up!</p> : null}
+            <div className="mt-20 p-2 text-center">
+                <button className="p-5 outline outline-blue-900 font-display font-bold cursor-pointer hover:bg-blue-900 hover:text-white duration-200" onClick={handleStartPause}>
                     {started ? "Pause" : "Start"}
                 </button>
-                <button value={time} onClick={handleReset}>
+                <button className="ml-10 p-5 outline outline-blue-900 font-display font-bold cursor-pointer hover:bg-blue-900 hover:text-white duration-200" value={time} onClick={handleReset}>
                     Reset
                 </button>
             </div>

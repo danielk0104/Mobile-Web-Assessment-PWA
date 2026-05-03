@@ -31,7 +31,7 @@ function Journal() {
 
   // Delete an entry
   function deleteEntry(time) {
-    const updatedEntry = todos.filter(
+    const updatedEntry = journal.filter(
       function (entry) {
       return entry.time !== time
       }
