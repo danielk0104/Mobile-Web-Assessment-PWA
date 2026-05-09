@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useLocation } from "react-router-dom"
+import { useLocation, Link } from "react-router-dom"
 
 function Messages() {
     // Motivational messages
@@ -28,7 +28,7 @@ function Messages() {
     }, [location.pathname])
 
     return (
-        <div className="px-5">
+        <div className="px-5 mt-15">
             <hr className="mt-3 mb-2"></hr>
             <p className="text-sm font-display italic text-center">{display}</p>
             <hr className="mt-2 mb-3"></hr>

@@ -27,7 +27,7 @@ function TodoForm(props) {
                 onClick={handleSubmit}
                 className="p-2 w-xs ml-3 outline outline-blue-900 hover:bg-blue-900 hover:text-white duration-200 font-display font-bold"
             >
-                Confirm Todo
+                Confirm To-Do
             </button>
         </div>
     )

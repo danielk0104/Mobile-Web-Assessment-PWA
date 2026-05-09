@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom"
+import Weekday from "./Weekday"
 
 function Menu() {
     return (
-        <div className="fixed top-0 w-lg p-3">
+        <div className="fixed top-0 w-lg p-3 bg-linear-to-b from-white from-60% to-transparent">
+            <Weekday />
             <nav className="flex outline outline-blue-900 bg-white text-blue-900">
                 <ul className="flex w-full">
                     <li className="h-full w-full outline">
