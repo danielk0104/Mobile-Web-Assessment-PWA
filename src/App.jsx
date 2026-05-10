@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom"
-import { useState } from "react"
 import Menu from "./components/Menu"
 import Messages from "./components/Messages"
 import Home from "./home/Home"
@@ -15,7 +14,7 @@ const main_content = (
       <Route path="/to-do" element={<Todo />} />
       <Route path="/journal" element={<Journal />} />
       <Route path="/timer" element={<Timer />} />
-      <Route path="*" element={<h1>Page Not Found</h1>} />
+      <Route path="*" element={<h1 className="p-5 text-display font-bold text-2xl">Page Not Found</h1>} />
     </Routes>
   </div>
 )
