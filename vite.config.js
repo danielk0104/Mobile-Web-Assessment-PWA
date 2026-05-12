@@ -32,4 +32,5 @@ export default defineConfig({
       }
     })
   ],
+  base: "/KV5049/assessment/webapp/"
 })

@@ -7,7 +7,7 @@ import timer_image from "../assets/timer.jpg"
 
 const app_logo = (
     <div className="flex justify-center">
-        <img className="w-10" src={logo}></img>
+        <img className="w-10" src={logo} alt="App logo"></img>
         <p className="ml-2 text-4xl font-display font-light">Consil</p>
     </div>
 )
