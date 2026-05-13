@@ -20,7 +20,7 @@ function Home() {
             <p className="mb-10 text-center text-xs font-display">Motivational App</p>
             <p className="font-display text-center">Welcome to the app. Use the buttons below to access the app's functions; or, use the top menu.</p>
             <ImageButton image={todo_image} text="To-Do List" to="/to-do" />
-            <ImageButton image={journal_image} text="Journal" to="/journal"/>
+            <ImageButton image={journal_image} text="Journal" to="/journal" />
             <ImageButton image={timer_image} text="Timer" to="/timer" />
         </div>
     )

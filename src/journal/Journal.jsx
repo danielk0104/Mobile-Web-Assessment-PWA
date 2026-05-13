@@ -48,7 +48,8 @@ function Journal() {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Search entries..."
-        className="p-2 outline w-full font-display"
+        className="p-2 outline w-full font-display focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-700"
+        aria-label="Search journal entries"
       />
       <JournalForm handleSubmit={addEntry} />
       <p className="mb-3 text-xl font-display">Past entries...</p>

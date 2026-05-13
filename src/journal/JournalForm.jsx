@@ -24,7 +24,8 @@ function JournalForm(props) {
                 maxLength="100"
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="Enter a title..."
-                className="p-2 mb-5 outline w-full font-display"
+                className="p-2 mb-5 outline w-full font-display focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-700"
+                aria-label="Write a title for a new journal entry"
             />
             <input 
                 type="text"
@@ -32,11 +33,12 @@ function JournalForm(props) {
                 maxLength="500"
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Write a new entry..."
-                className="p-2 mb-5 outline w-full font-display"
+                className="p-2 mb-5 outline w-full font-display focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-700"
+                aria-label="Write a new journal entry"
             />
             <button
                 onClick={handleSubmit}
-                className="p-2 outline outline-blue-900 font-display font-bold cursor-pointer hover:bg-blue-900 hover:text-white duration-200"
+                className="p-2 outline outline-blue-900 font-display font-bold cursor-pointer hover:bg-blue-900 hover:text-white duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-700"
             >
                 Confirm Entry
             </button>

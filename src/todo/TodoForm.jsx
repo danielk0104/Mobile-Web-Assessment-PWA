@@ -21,11 +21,12 @@ function TodoForm(props) {
                 maxLength="100"
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Write a new todo..."
-                className="w-2xl p-2 outline font-display"
+                className="w-2xl p-2 outline font-display focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-700"
+                aria-label="Write text for a new to-do item"
             />
             <button
                 onClick={handleSubmit}
-                className="p-2 w-xs ml-3 outline outline-blue-900 hover:bg-blue-900 hover:text-white duration-200 font-display font-bold"
+                className="p-2 w-xs ml-3 outline outline-blue-900 hover:bg-blue-900 hover:text-white duration-200 font-display font-bold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-700"
             >
                 Confirm To-Do
             </button>

@@ -53,7 +53,7 @@ function Todo() {
         <div className="container mx-auto p-4">
             <Header title="To-Do List" />
             <TodoForm handleSubmit={addTodo} />
-            <select className="mb-3 mt-3 p-2 outline outline-blue-900 hover:bg-blue-900 hover:text-white duration-200 font-display font-bold cursor-pointer" onChange={handleSelected} value={selected}>
+            <select className="mb-3 mt-3 p-2 outline outline-blue-900 hover:bg-blue-900 hover:text-white duration-200 font-display font-bold cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-700" onChange={handleSelected} value={selected}>
                 <option value="all">All</option>
                 <option value="active">Active</option>
                 <option value="completed">Completed</option>

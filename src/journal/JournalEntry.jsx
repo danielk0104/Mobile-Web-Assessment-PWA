@@ -27,7 +27,7 @@ function JournalEntry(props) {
 
     const heading = (
         <div className="flex outline outline-blue-900">
-            <h2 className="p-2 bg-blue-900 outline outline-blue-900 text-white font-display font-bold text-xl hover:bg-white hover:text-black duration-200 cursor-pointer" onClick={() => clickVisible()}>{props.title}</h2>
+            <h2 className="p-2 bg-blue-900 outline outline-blue-900 text-white font-display font-bold text-xl hover:bg-white hover:text-black duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-700" tabIndex={0} onClick={() => clickVisible()}>{props.title}</h2>
             <p className="p-2 ml-1 font-display italic font-bold">{formattedDate}</p>
         </div>
     )
@@ -35,7 +35,7 @@ function JournalEntry(props) {
     const body = (
         <div className="p-3">
             { isVisible ? entry : null }
-            <button className="p-2 outline outline-red-500 font-display font-bold cursor-pointer hover:bg-red-500 hover:text-white duration-200" onClick={() => props.handleDelete(props.time)}>Delete Entry</button>
+            <button className="p-2 outline outline-red-500 font-display font-bold cursor-pointer hover:bg-red-500 hover:text-white duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-700" onClick={() => props.handleDelete(props.time)}>Delete Entry</button>
         </div>
     )
 
